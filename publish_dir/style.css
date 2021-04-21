@@ -22,6 +22,12 @@ body {
   overflow: hidden;
 }
 
+@media screen and (max-width: 728px) {
+  .quiz-container {
+    width: 350px;
+  }
+}
+
 .quiz-header {
   padding: 4rem;
 }
