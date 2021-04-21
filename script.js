@@ -128,7 +128,15 @@ submitBtn.addEventListener("click", () => {
       loadQuiz();
     } else {
       //TODO: show results
-      quiz.innerHTML = `<h2>You answered correctly to ${score}/${quizData.length} questions</h2>`;
+      quiz.innerHTML = `
+      <h2>
+      You answered correctly to ${score}/${quizData.length} questions</h2> 
+      
+      <button onclick="location.reload()">
+      Reload
+      </button>
+      
+      `;
     }
   }
 });

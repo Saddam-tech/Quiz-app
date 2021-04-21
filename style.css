@@ -53,6 +53,11 @@ button:hover {
   background-color: #70318b;
 }
 
+button:focus {
+  background-color: #70318b;
+  outline: none;
+}
+
 ul li {
   font-size: 1.1rem;
   margin: 1rem 0;
