@@ -29,7 +29,7 @@ const quizData = [
     b: "Hypertext Markup Language",
     c: "Cascading Style Sheet",
     d: "Jason Object Notation",
-    correct: "a",
+    correct: "b",
   },
   {
     question: "What is the name of Umidjon`s cat?",
