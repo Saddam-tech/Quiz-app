@@ -82,6 +82,8 @@ const a_text = document.getElementById("a_text");
 const b_text = document.getElementById("b_text");
 const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
+const parent_el = document.querySelector(".parent-el");
+const uls = document.querySelectorAll(".child-el");
 
 let currentQuiz = 0;
 let score = 0;
@@ -90,6 +92,20 @@ loadQuiz();
 
 function loadQuiz() {
   deselectAnswers();
+
+  uls.forEach((ul) => (ul.style.background = "white"));
+
+  parent_el.addEventListener("click", (e) => {
+    const answer = getSelected();
+    const ul = e.target.closest(".child-el");
+    if (answer === quizData[currentQuiz].correct) {
+      console.log("Data");
+      ul.style.background = "blue";
+    } else {
+      ul.style.background = "red";
+    }
+  });
+
   const currentQuizData = quizData[currentQuiz];
   questionEl.innerHTML = currentQuizData.question;
   a_text.innerText = currentQuizData.a;
@@ -118,7 +134,6 @@ function deselectAnswers() {
 submitBtn.addEventListener("click", () => {
   //check to see the answer
   const answer = getSelected();
-  console.log(answer);
   if (answer) {
     if (answer === quizData[currentQuiz].correct) {
       score++;
